@@ -26,6 +26,14 @@ def compress():
         album_dir = img_path.parent.parent
         new_path = img_path.with_suffix(".webp")
 
+        # Skip if already WebP and within size limits
+        if img_path.suffix.lower() == ".webp":
+            with Image.open(img_path) as im:
+                w, h = im.size
+                if w <= MAX_SIZE and h <= MAX_SIZE:
+                    print(f"{img_path.name} → {img_path.name}  (已是 WebP，跳過)")
+                    continue
+
         with Image.open(img_path) as im:
             w, h = im.size
             if w > MAX_SIZE or h > MAX_SIZE:
