@@ -1,7 +1,10 @@
 {
   "title": "The Hunter",
-  "tags": ["Bloodborne", "Character"],
+  "tags": [
+    "Bloodborne",
+    "Character"
+  ],
   "author": "Carlos",
-  "cover": "BloodBorn.jpg",
+  "cover": "BloodBorn.webp",
   "createTime": "2026-05-09T06:38:38.072599+00:00"
 }

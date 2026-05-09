@@ -54,13 +54,23 @@ Priority order:
 3. `Imagem.png` if present
 4. First image alphabetically (fallback — build script also does this automatically)
 
-### 5. Create meta.json and run build
+### 5. Compress images for web
+
+Run **compress-gallery-images** skill (or directly):
+
+```bash
+python scripts/compress_gallery.py
+```
+
+Converts to WebP 1920px max, updates meta.json cover fields automatically.
+
+### 6. Create meta.json and run build
 
 Follow **gen-gallery-meta** skill for meta.json format and build script.
 
 Ask user for author/tags when unknown rather than guessing.
 
-### 6. Delete zip files
+### 7. Delete zip files
 
 After `build_gallery.py` succeeds, delete all processed zip files from `downloads/`:
 
