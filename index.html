@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitGallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@300;400;500&family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="site-header__brand">
+        <h1 class="wordmark">GitGallery<span class="wordmark__dot">.</span></h1>
+        <div class="wordmark__sub">
+          <span id="header-author"></span>
+          <span class="sep">|</span>
+          <code id="header-branch">gallery/</code>
+          <span class="sep">|</span>
+          <span id="header-date"></span>
+        </div>
+      </div>
+      <div class="site-header__actions">
+        <button class="icon-btn" id="btn-sort" aria-label="排序">
+          <i class="mdi mdi-sort"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Toolbar ===== -->
+  <div class="toolbar">
+    <div class="toolbar__inner">
+      <label class="search-wrap">
+        <i class="mdi mdi-magnify"></i>
+        <input type="search" id="search-input" class="search-input" placeholder="搜尋相簿名稱…" autocomplete="off">
+      </label>
+      <div class="tag-filter" id="tag-filter" role="group" aria-label="標籤篩選">
+        <button class="chip chip--active" data-tag="__all__">全部</button>
+      </div>
+      <label class="size-wrap">
+        <i class="mdi mdi-view-grid"></i>
+        <input type="range" id="size-slider" min="150" max="400" value="240">
+        <i class="mdi mdi-view-grid-outline size-wrap__big"></i>
+      </label>
+    </div>
+  </div>
+
+  <!-- ===== Meta row ===== -->
+  <div class="meta-row" id="meta-row">
+    <span class="meta-row__count" id="meta-count"></span>
+    <button class="meta-row__clear hidden" id="clear-btn">清除篩選</button>
+  </div>
+
+  <!-- ===== Card Grid ===== -->
+  <main class="card-grid" id="card-grid"></main>
+
+  <!-- ===== Empty State ===== -->
+  <div class="empty-state hidden" id="empty-state">
+    <div class="empty-state__glyph">∅</div>
+    <h3 class="empty-state__title">找不到符合的相簿</h3>
+    <p class="empty-state__body">試試其他關鍵字，或清除篩選條件。</p>
+  </div>
+
+  <!-- ===== Dialog ===== -->
+  <div class="dialog-overlay hidden" id="dialog-overlay" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+    <div class="dialog" id="dialog">
+      <div class="dialog__head">
+        <h2 class="dialog__title" id="dialog-title">
+          <span id="dialog-title-text"></span>
+          <span class="dialog__idx" id="dialog-idx"></span>
+        </h2>
+        <button class="dialog__close" id="dialog-close" aria-label="關閉">
+          <i class="mdi mdi-close"></i>
+        </button>
+      </div>
+      <div class="dialog__main" id="dialog-main">
+        <button class="dialog__nav dialog__nav--prev" id="nav-prev" aria-label="上一張" disabled>
+          <i class="mdi mdi-chevron-left"></i>
+        </button>
+        <div class="dialog__img-wrap">
+          <img class="dialog__img" id="dialog-img" src="" alt="">
+        </div>
+        <button class="dialog__nav dialog__nav--next" id="nav-next" aria-label="下一張" disabled>
+          <i class="mdi mdi-chevron-right"></i>
+        </button>
+      </div>
+      <div class="thumb-strip" id="thumb-strip"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
