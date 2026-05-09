@@ -27,6 +27,11 @@ const dialogClose   = document.getElementById('dialog-close');
 const thumbStrip    = document.getElementById('thumb-strip');
 const headerAuthor  = document.getElementById('header-author');
 const headerDate    = document.getElementById('header-date');
+const btnFullscreen = document.getElementById('btn-fullscreen');
+const zoomInBtn     = document.getElementById('zoom-in');
+const zoomOutBtn    = document.getElementById('zoom-out');
+const zoomResetBtn  = document.getElementById('zoom-reset');
+const zoomLevelEl   = document.getElementById('zoom-level');
 
 // ---- Helpers ----
 function fmtDate(iso) {
@@ -211,6 +216,85 @@ sizeSlider.addEventListener('input', e => {
   document.documentElement.style.setProperty('--gg-card-min', `${e.target.value}px`);
 });
 
+// ---- Zoom ----
+const ZOOM_MIN = 1, ZOOM_MAX = 4, ZOOM_STEP = 0.25;
+let zoom = { scale: 1, panX: 0, panY: 0, dragging: false, startX: 0, startY: 0 };
+
+function applyZoom() {
+  const { scale, panX, panY } = zoom;
+  dialogImg.style.transform = scale === 1 ? '' : `translate(${panX}px, ${panY}px) scale(${scale})`;
+  dialogImg.style.cursor = scale > 1 ? (zoom.dragging ? 'grabbing' : 'grab') : '';
+  dialogImg.style.transition = zoom.dragging ? 'none' : 'transform .15s ease';
+  zoomLevelEl.textContent = `${Math.round(scale * 100)}%`;
+  zoomInBtn.disabled  = scale >= ZOOM_MAX;
+  zoomOutBtn.disabled = scale <= ZOOM_MIN;
+  zoomResetBtn.classList.toggle('hidden', scale === ZOOM_MIN);
+}
+
+function resetZoom() {
+  zoom = { scale: 1, panX: 0, panY: 0, dragging: false, startX: 0, startY: 0 };
+  applyZoom();
+}
+
+function changeScale(delta) {
+  zoom.scale = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, zoom.scale + delta));
+  if (zoom.scale === ZOOM_MIN) { zoom.panX = 0; zoom.panY = 0; }
+  applyZoom();
+}
+
+dialogImg.addEventListener('wheel', e => {
+  e.preventDefault();
+  changeScale(e.deltaY < 0 ? ZOOM_STEP : -ZOOM_STEP);
+}, { passive: false });
+
+dialogImg.addEventListener('dblclick', () => {
+  zoom.scale === 1 ? changeScale(1) : resetZoom();
+});
+
+dialogImg.addEventListener('dragstart', e => e.preventDefault());
+
+dialogImg.addEventListener('mousedown', e => {
+  if (zoom.scale <= 1) return;
+  e.preventDefault();
+  zoom.dragging = true;
+  zoom.startX = e.clientX - zoom.panX;
+  zoom.startY = e.clientY - zoom.panY;
+  dialogImg.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mousemove', e => {
+  if (!zoom.dragging) return;
+  zoom.panX = e.clientX - zoom.startX;
+  zoom.panY = e.clientY - zoom.startY;
+  applyZoom();
+});
+
+document.addEventListener('mouseup', () => {
+  if (!zoom.dragging) return;
+  zoom.dragging = false;
+  dialogImg.style.cursor = zoom.scale > 1 ? 'grab' : '';
+});
+
+zoomInBtn.addEventListener('click',  () => changeScale(ZOOM_STEP));
+zoomOutBtn.addEventListener('click', () => changeScale(-ZOOM_STEP));
+zoomResetBtn.addEventListener('click', resetZoom);
+
+// ---- Fullscreen ----
+function toggleFullscreen() {
+  if (!document.fullscreenElement) {
+    dialogOverlay.requestFullscreen().catch(() => {});
+  } else {
+    document.exitFullscreen();
+  }
+}
+
+document.addEventListener('fullscreenchange', () => {
+  const icon = btnFullscreen.querySelector('i');
+  icon.className = document.fullscreenElement ? 'mdi mdi-fullscreen-exit' : 'mdi mdi-fullscreen';
+});
+
+btnFullscreen.addEventListener('click', toggleFullscreen);
+
 // ---- Dialog ----
 function openDialog(album) {
   state.dialog.album = album;
@@ -223,9 +307,11 @@ function openDialog(album) {
 }
 
 function closeDialog() {
+  if (document.fullscreenElement) document.exitFullscreen();
   dialogOverlay.classList.add('hidden');
   document.body.style.overflow = '';
   state.dialog.album = null;
+  resetZoom();
 }
 
 function showImage(index) {
@@ -241,6 +327,7 @@ function showImage(index) {
   const hasNextAlbum = currentAlbumIdx < state.filtered.length - 1;
   navNext.disabled = isLast && !hasNextAlbum;
   highlightThumb(index);
+  resetZoom();
 }
 
 function renderThumbs() {
@@ -281,15 +368,22 @@ navNext.addEventListener('click', () => {
 });
 dialogClose.addEventListener('click', closeDialog);
 dialogOverlay.addEventListener('click', e => {
-  const inside = e.target.closest('.dialog__head, .thumb-strip, .dialog__nav, .dialog__img-wrap');
+  const inside = e.target.closest('.dialog__head, .thumb-strip, .dialog__nav, .dialog__img-wrap, .zoom-controls');
   if (!inside) closeDialog();
 });
 
 document.addEventListener('keydown', e => {
   if (dialogOverlay.classList.contains('hidden')) return;
-  if (e.key === 'Escape') { closeDialog(); return; }
+  if (e.key === 'Escape') {
+    if (document.fullscreenElement) { document.exitFullscreen(); return; }
+    closeDialog();
+    return;
+  }
   if (e.key === 'ArrowLeft')  showImage(state.dialog.imageIndex - 1);
   if (e.key === 'ArrowRight') showImage(state.dialog.imageIndex + 1);
+  if (e.key === '+' || e.key === '=') changeScale(ZOOM_STEP);
+  if (e.key === '-') changeScale(-ZOOM_STEP);
+  if (e.key === '0') resetZoom();
 });
 
 // ---- Init ----

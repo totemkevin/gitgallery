@@ -75,6 +75,9 @@
           <span id="dialog-title-text"></span>
           <span class="dialog__idx" id="dialog-idx"></span>
         </h2>
+        <button class="dialog__fullscreen" id="btn-fullscreen" aria-label="全螢幕">
+          <i class="mdi mdi-fullscreen"></i>
+        </button>
         <button class="dialog__close" id="dialog-close" aria-label="關閉">
           <i class="mdi mdi-close"></i>
         </button>
@@ -89,6 +92,18 @@
         <button class="dialog__nav dialog__nav--next" id="nav-next" aria-label="下一張" disabled>
           <i class="mdi mdi-chevron-right"></i>
         </button>
+        <div class="zoom-controls" id="zoom-controls">
+          <button class="zoom-btn" id="zoom-out" aria-label="縮小" disabled>
+            <i class="mdi mdi-minus"></i>
+          </button>
+          <span class="zoom-level" id="zoom-level">100%</span>
+          <button class="zoom-btn" id="zoom-in" aria-label="放大">
+            <i class="mdi mdi-plus"></i>
+          </button>
+          <button class="zoom-btn zoom-btn--reset hidden" id="zoom-reset" aria-label="重置縮放">
+            <i class="mdi mdi-magnify-remove-outline"></i>
+          </button>
+        </div>
       </div>
       <div class="thumb-strip" id="thumb-strip"></div>
     </div>
