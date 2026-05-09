@@ -131,6 +131,37 @@ button { cursor: pointer; font-family: inherit; }
   transition: background .15s, color .15s;
 }
 .icon-btn:hover { background: var(--tt-hover-bg); color: var(--gg-accent); }
+.icon-btn--active { color: var(--gg-accent); }
+
+.site-header__actions { position: relative; }
+
+.sort-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: var(--tt-surface);
+  border-radius: 8px;
+  box-shadow: var(--tt-shadow-hover);
+  padding: 6px 0;
+  min-width: 130px;
+  z-index: 50;
+}
+
+.sort-option {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--tt-fg-2);
+  cursor: pointer;
+  transition: background .1s;
+}
+.sort-option:hover { background: var(--tt-hover-bg); }
+.sort-option--active { color: var(--gg-accent); font-weight: 500; }
 
 /* ============================================================
    Toolbar
@@ -185,15 +216,49 @@ button { cursor: pointer; font-family: inherit; }
 .search-input:focus { border-bottom: 2px solid var(--gg-accent); padding-bottom: 0; }
 
 /* Tag chips */
+.tag-filter-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+}
+
 .tag-filter {
+  flex: 1;
+  min-width: 0;
   display: flex;
   gap: 6px;
   overflow-x: auto;
   padding-bottom: 4px;
   align-items: center;
   scrollbar-width: none;
+  flex-wrap: nowrap;
 }
 .tag-filter::-webkit-scrollbar { display: none; }
+
+.tag-filter.expanded {
+  flex-wrap: wrap;
+  overflow-x: visible;
+  padding-bottom: 0;
+}
+
+.tag-expand-btn {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--tt-grey-500);
+  background: #fff;
+  color: var(--tt-fg-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s;
+}
+.tag-expand-btn:hover { border-color: var(--gg-accent); color: var(--gg-accent); }
+.tag-expand-btn.active { background: var(--gg-accent-soft); border-color: var(--gg-accent); color: var(--gg-accent); }
 
 .chip {
   display: inline-flex;
@@ -497,6 +562,14 @@ button { cursor: pointer; font-family: inherit; }
 }
 .dialog__close:hover,
 .dialog__fullscreen:hover { background: rgba(255,255,255,.2); }
+
+.dialog__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  flex-shrink: 0;
+}
 
 .dialog__main {
   flex: 1;

@@ -6,6 +6,7 @@ const state = {
   filtered: [],
   searchQuery: '',
   selectedTags: new Set(),
+  sort: { field: 'createTime', dir: 'desc' },
   dialog: { album: null, imageIndex: 0 },
 };
 
@@ -27,11 +28,12 @@ const dialogClose   = document.getElementById('dialog-close');
 const thumbStrip    = document.getElementById('thumb-strip');
 const headerAuthor  = document.getElementById('header-author');
 const headerDate    = document.getElementById('header-date');
-const btnFullscreen = document.getElementById('btn-fullscreen');
-const zoomInBtn     = document.getElementById('zoom-in');
-const zoomOutBtn    = document.getElementById('zoom-out');
-const zoomResetBtn  = document.getElementById('zoom-reset');
-const zoomLevelEl   = document.getElementById('zoom-level');
+const btnFullscreen  = document.getElementById('btn-fullscreen');
+const zoomInBtn      = document.getElementById('zoom-in');
+const zoomOutBtn     = document.getElementById('zoom-out');
+const zoomResetBtn   = document.getElementById('zoom-reset');
+const zoomLevelEl    = document.getElementById('zoom-level');
+const tagExpandBtn   = document.getElementById('tag-expand-btn');
 
 // ---- Helpers ----
 function fmtDate(iso) {
@@ -54,10 +56,9 @@ async function loadGallery() {
     // Fallback: show placeholder when no data
     state.albums = [];
   }
-  state.filtered = state.albums;
   updateHeaderMeta();
   buildTagFilter();
-  renderCards();
+  applyFilter();
 }
 
 function updateHeaderMeta() {
@@ -86,7 +87,7 @@ function buildTagFilter() {
   });
 }
 
-// ---- Filter Logic ----
+// ---- Filter + Sort Logic ----
 function applyFilter() {
   const q = state.searchQuery.toLowerCase();
   state.filtered = state.albums.filter(a => {
@@ -95,6 +96,15 @@ function applyFilter() {
       [...state.selectedTags].every(t => a.tags.includes(t));
     return matchTitle && matchTags;
   });
+
+  const { field, dir } = state.sort;
+  state.filtered.sort((a, b) => {
+    const va = a[field] ?? '';
+    const vb = b[field] ?? '';
+    const cmp = va < vb ? -1 : va > vb ? 1 : 0;
+    return dir === 'asc' ? cmp : -cmp;
+  });
+
   renderCards();
 }
 
@@ -182,6 +192,61 @@ function createCard(album) {
   art.addEventListener('click', () => openDialog(album));
   return art;
 }
+
+// ---- Tag Expand ----
+tagExpandBtn.addEventListener('click', () => {
+  const expanded = tagFilterEl.classList.toggle('expanded');
+  tagExpandBtn.classList.toggle('active', expanded);
+  tagExpandBtn.querySelector('i').className = expanded ? 'mdi mdi-chevron-up' : 'mdi mdi-chevron-down';
+  tagExpandBtn.title = expanded ? '收合標籤' : '展開所有標籤';
+});
+
+// ---- Sort Menu ----
+const SORT_OPTIONS = [
+  { label: '最新',      field: 'createTime', dir: 'desc' },
+  { label: '最舊',      field: 'createTime', dir: 'asc'  },
+  { label: '名稱 A→Z',  field: 'title',      dir: 'asc'  },
+  { label: '名稱 Z→A',  field: 'title',      dir: 'desc' },
+];
+
+const btnSort  = document.getElementById('btn-sort');
+const sortMenu = document.createElement('div');
+sortMenu.className = 'sort-menu hidden';
+sortMenu.setAttribute('role', 'menu');
+
+SORT_OPTIONS.forEach(opt => {
+  const btn = document.createElement('button');
+  btn.className = 'sort-option';
+  btn.textContent = opt.label;
+  btn.setAttribute('role', 'menuitem');
+  btn.addEventListener('click', () => {
+    state.sort = { field: opt.field, dir: opt.dir };
+    syncSortMenu();
+    applyFilter();
+    sortMenu.classList.add('hidden');
+  });
+  sortMenu.appendChild(btn);
+});
+
+btnSort.parentElement.appendChild(sortMenu);
+
+function syncSortMenu() {
+  const isDefault = state.sort.field === 'createTime' && state.sort.dir === 'desc';
+  btnSort.classList.toggle('icon-btn--active', !isDefault);
+  sortMenu.querySelectorAll('.sort-option').forEach((btn, i) => {
+    const opt = SORT_OPTIONS[i];
+    btn.classList.toggle('sort-option--active',
+      opt.field === state.sort.field && opt.dir === state.sort.dir);
+  });
+}
+
+btnSort.addEventListener('click', e => {
+  e.stopPropagation();
+  sortMenu.classList.toggle('hidden');
+  syncSortMenu();
+});
+
+document.addEventListener('click', () => sortMenu.classList.add('hidden'));
 
 // ---- Events: search, tag filter, size slider ----
 searchInput.addEventListener('input', debounce(e => {
