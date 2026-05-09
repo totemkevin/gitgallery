@@ -1,5 +1,195 @@
 [
   {
+    "id": "Fides Figure Yae Miko",
+    "title": "Fides Figure Yae Miko",
+    "tags": [
+      "Figure",
+      "Genshin Impact"
+    ],
+    "author": "Fides",
+    "cover": "gallery/Fides Figure Yae Miko/cover.webp",
+    "images": [
+      "gallery/Fides Figure Yae Miko/images/1.webp",
+      "gallery/Fides Figure Yae Miko/images/2.webp",
+      "gallery/Fides Figure Yae Miko/images/3.webp",
+      "gallery/Fides Figure Yae Miko/images/4.webp",
+      "gallery/Fides Figure Yae Miko/images/5.webp",
+      "gallery/Fides Figure Yae Miko/images/6.webp",
+      "gallery/Fides Figure Yae Miko/images/7.webp",
+      "gallery/Fides Figure Yae Miko/images/8.webp"
+    ],
+    "createTime": "2026-05-09T09:26:08.275087+00:00"
+  },
+  {
+    "id": "Fides Figure Spectre",
+    "title": "Fides Figure Spectre",
+    "tags": [
+      "Figure",
+      "Arknights"
+    ],
+    "author": "Fides",
+    "cover": "gallery/Fides Figure Spectre/cover.webp",
+    "images": [
+      "gallery/Fides Figure Spectre/images/1.webp",
+      "gallery/Fides Figure Spectre/images/10.webp",
+      "gallery/Fides Figure Spectre/images/2.webp",
+      "gallery/Fides Figure Spectre/images/3.webp",
+      "gallery/Fides Figure Spectre/images/4.webp",
+      "gallery/Fides Figure Spectre/images/5.webp",
+      "gallery/Fides Figure Spectre/images/6.webp",
+      "gallery/Fides Figure Spectre/images/7.webp",
+      "gallery/Fides Figure Spectre/images/8.webp",
+      "gallery/Fides Figure Spectre/images/9.webp"
+    ],
+    "createTime": "2026-05-09T09:26:08.161825+00:00"
+  },
+  {
+    "id": "Fides Figure Shinobu",
+    "title": "Fides Figure Shinobu",
+    "tags": [
+      "Figure",
+      "Demon Slayer"
+    ],
+    "author": "Fides",
+    "cover": "gallery/Fides Figure Shinobu/cover.webp",
+    "images": [
+      "gallery/Fides Figure Shinobu/images/1.webp",
+      "gallery/Fides Figure Shinobu/images/10.webp",
+      "gallery/Fides Figure Shinobu/images/11.webp",
+      "gallery/Fides Figure Shinobu/images/12.webp",
+      "gallery/Fides Figure Shinobu/images/2.webp",
+      "gallery/Fides Figure Shinobu/images/3.webp",
+      "gallery/Fides Figure Shinobu/images/4.webp",
+      "gallery/Fides Figure Shinobu/images/5.webp",
+      "gallery/Fides Figure Shinobu/images/6.webp",
+      "gallery/Fides Figure Shinobu/images/7.webp",
+      "gallery/Fides Figure Shinobu/images/8.webp",
+      "gallery/Fides Figure Shinobu/images/9.webp"
+    ],
+    "createTime": "2026-05-09T09:26:08.061474+00:00"
+  },
+  {
+    "id": "Fides Figure Shinano",
+    "title": "Fides Figure Shinano",
+    "tags": [
+      "Figure",
+      "Azur Lane"
+    ],
+    "author": "Fides",
+    "cover": "gallery/Fides Figure Shinano/cover.webp",
+    "images": [
+      "gallery/Fides Figure Shinano/images/1.webp",
+      "gallery/Fides Figure Shinano/images/10.webp",
+      "gallery/Fides Figure Shinano/images/11.webp",
+      "gallery/Fides Figure Shinano/images/12.webp",
+      "gallery/Fides Figure Shinano/images/2.webp",
+      "gallery/Fides Figure Shinano/images/3.webp",
+      "gallery/Fides Figure Shinano/images/4.webp",
+      "gallery/Fides Figure Shinano/images/5.webp",
+      "gallery/Fides Figure Shinano/images/6.webp",
+      "gallery/Fides Figure Shinano/images/7.webp",
+      "gallery/Fides Figure Shinano/images/8.webp",
+      "gallery/Fides Figure Shinano/images/9.webp"
+    ],
+    "createTime": "2026-05-09T09:26:07.958263+00:00"
+  },
+  {
+    "id": "Fides Figure Scarlet",
+    "title": "Fides Figure Scarlet",
+    "tags": [
+      "Figure",
+      "Character"
+    ],
+    "author": "Fides",
+    "cover": "gallery/Fides Figure Scarlet/cover.webp",
+    "images": [
+      "gallery/Fides Figure Scarlet/images/1.webp",
+      "gallery/Fides Figure Scarlet/images/10.webp",
+      "gallery/Fides Figure Scarlet/images/11.webp",
+      "gallery/Fides Figure Scarlet/images/12.webp",
+      "gallery/Fides Figure Scarlet/images/2.webp",
+      "gallery/Fides Figure Scarlet/images/3.webp",
+      "gallery/Fides Figure Scarlet/images/4.webp",
+      "gallery/Fides Figure Scarlet/images/5.webp",
+      "gallery/Fides Figure Scarlet/images/6.webp",
+      "gallery/Fides Figure Scarlet/images/7.webp",
+      "gallery/Fides Figure Scarlet/images/8.webp",
+      "gallery/Fides Figure Scarlet/images/9.webp"
+    ],
+    "createTime": "2026-05-09T09:26:07.855938+00:00"
+  },
+  {
+    "id": "Fides Figure Jane Doe",
+    "title": "Fides Figure Jane Doe",
+    "tags": [
+      "Figure",
+      "Character"
+    ],
+    "author": "Fides",
+    "cover": "gallery/Fides Figure Jane Doe/cover.webp",
+    "images": [
+      "gallery/Fides Figure Jane Doe/images/1.webp",
+      "gallery/Fides Figure Jane Doe/images/10.webp",
+      "gallery/Fides Figure Jane Doe/images/11.webp",
+      "gallery/Fides Figure Jane Doe/images/12.webp",
+      "gallery/Fides Figure Jane Doe/images/13.webp",
+      "gallery/Fides Figure Jane Doe/images/14.webp",
+      "gallery/Fides Figure Jane Doe/images/15.webp",
+      "gallery/Fides Figure Jane Doe/images/2.webp",
+      "gallery/Fides Figure Jane Doe/images/3.webp",
+      "gallery/Fides Figure Jane Doe/images/4.webp",
+      "gallery/Fides Figure Jane Doe/images/5.webp",
+      "gallery/Fides Figure Jane Doe/images/6.webp",
+      "gallery/Fides Figure Jane Doe/images/7.webp",
+      "gallery/Fides Figure Jane Doe/images/8.webp",
+      "gallery/Fides Figure Jane Doe/images/9.webp"
+    ],
+    "createTime": "2026-05-09T09:26:07.758566+00:00"
+  },
+  {
+    "id": "Fides Figure DMG",
+    "title": "Fides Figure DMG",
+    "tags": [
+      "Figure",
+      "Character"
+    ],
+    "author": "Fides",
+    "cover": "gallery/Fides Figure DMG/cover.webp",
+    "images": [
+      "gallery/Fides Figure DMG/images/1.webp",
+      "gallery/Fides Figure DMG/images/2.webp",
+      "gallery/Fides Figure DMG/images/3.webp",
+      "gallery/Fides Figure DMG/images/4.webp",
+      "gallery/Fides Figure DMG/images/5.webp",
+      "gallery/Fides Figure DMG/images/6.webp",
+      "gallery/Fides Figure DMG/images/7.webp",
+      "gallery/Fides Figure DMG/images/8.webp"
+    ],
+    "createTime": "2026-05-09T09:26:07.646870+00:00"
+  },
+  {
+    "id": "Fides Figure 2B",
+    "title": "Fides Figure 2B",
+    "tags": [
+      "Figure",
+      "NieR: Automata"
+    ],
+    "author": "Fides",
+    "cover": "gallery/Fides Figure 2B/cover.webp",
+    "images": [
+      "gallery/Fides Figure 2B/images/1.webp",
+      "gallery/Fides Figure 2B/images/2.webp",
+      "gallery/Fides Figure 2B/images/3.webp",
+      "gallery/Fides Figure 2B/images/4.webp",
+      "gallery/Fides Figure 2B/images/5.webp",
+      "gallery/Fides Figure 2B/images/6.webp",
+      "gallery/Fides Figure 2B/images/7.webp",
+      "gallery/Fides Figure 2B/images/8.webp",
+      "gallery/Fides Figure 2B/images/9.webp"
+    ],
+    "createTime": "2026-05-09T09:26:07.553590+00:00"
+  },
+  {
     "id": "Selene",
     "title": "Selene",
     "tags": [
