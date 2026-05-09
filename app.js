@@ -42,7 +42,7 @@ function debounce(fn, ms) {
 // ---- Data Loading ----
 async function loadGallery() {
   try {
-    const res = await fetch('gallery-index.json');
+    const res = await fetch('gallery-index.json', { cache: 'no-store' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     state.albums = await res.json();
   } catch {
@@ -236,7 +236,10 @@ function showImage(index) {
   dialogImg.alt = `${album.title} 第 ${index + 1} 張`;
   dialogIdx.textContent = `${String(index + 1).padStart(2, '0')} / ${String(album.images.length).padStart(2, '0')}`;
   navPrev.disabled = index === 0;
-  navNext.disabled = index === album.images.length - 1;
+  const isLast = index === album.images.length - 1;
+  const currentAlbumIdx = state.filtered.indexOf(album);
+  const hasNextAlbum = currentAlbumIdx < state.filtered.length - 1;
+  navNext.disabled = isLast && !hasNextAlbum;
   highlightThumb(index);
 }
 
@@ -265,9 +268,22 @@ function highlightThumb(index) {
 }
 
 navPrev.addEventListener('click', () => showImage(state.dialog.imageIndex - 1));
-navNext.addEventListener('click', () => showImage(state.dialog.imageIndex + 1));
+navNext.addEventListener('click', () => {
+  const { album, imageIndex } = state.dialog;
+  if (imageIndex < album.images.length - 1) {
+    showImage(imageIndex + 1);
+  } else {
+    const currentIdx = state.filtered.indexOf(album);
+    if (currentIdx < state.filtered.length - 1) {
+      openDialog(state.filtered[currentIdx + 1]);
+    }
+  }
+});
 dialogClose.addEventListener('click', closeDialog);
-dialogOverlay.addEventListener('click', e => { if (e.target === dialogOverlay) closeDialog(); });
+dialogOverlay.addEventListener('click', e => {
+  const inside = e.target.closest('.dialog__head, .thumb-strip, .dialog__nav, .dialog__img-wrap');
+  if (!inside) closeDialog();
+});
 
 document.addEventListener('keydown', e => {
   if (dialogOverlay.classList.contains('hidden')) return;
