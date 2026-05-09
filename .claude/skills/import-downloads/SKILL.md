@@ -46,15 +46,7 @@ Always skip:
 - Directory entries (empty `Name`)
 - `.mp4` and other non-image files
 
-### 4. Choose cover image
-
-Priority order:
-1. File named after the character (e.g. `Azashara.jpg`, `Sphinx.jpg`)
-2. File with a descriptive name (e.g. `Meru_Front.png`, `Motoko_Kusanagi.V1.png`)
-3. `Imagem.png` if present
-4. First image alphabetically (fallback — build script also does this automatically)
-
-### 5. Compress images for web
+### 4. Compress images for web
 
 Run **compress-gallery-images** skill (or directly):
 
@@ -62,12 +54,21 @@ Run **compress-gallery-images** skill (or directly):
 python scripts/compress_gallery.py
 ```
 
-Converts to WebP 1920px max, updates meta.json cover fields automatically.
+Converts all images to WebP 1920px max **before** meta.json is created, so cover filenames are already `.webp` when you fill them in next.
+
+### 5. Choose cover image
+
+Pick from the now-.webp files in `images/`:
+
+1. File named after the character (e.g. `Azashara.webp`, `Sphinx.webp`)
+2. File with a descriptive name (e.g. `Meru_Front.webp`, `Motoko_Kusanagi.V1.webp`)
+3. First image alphabetically (fallback — build script also does this automatically)
 
 ### 6. Create meta.json and run build
 
 Follow **gen-gallery-meta** skill for meta.json format and build script.
 
+Use the `.webp` filename chosen in step 5 for the `cover` field.
 Ask user for author/tags when unknown rather than guessing.
 
 ### 7. Delete zip files
