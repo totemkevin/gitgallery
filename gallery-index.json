@@ -1,5 +1,204 @@
 [
   {
+    "id": "Chandra",
+    "title": "Chandra",
+    "tags": [
+      "Character"
+    ],
+    "author": "Carlos",
+    "cover": "gallery/Chandra/cover.webp",
+    "images": [
+      "gallery/Chandra/images/1.webp",
+      "gallery/Chandra/images/2.webp",
+      "gallery/Chandra/images/3.webp",
+      "gallery/Chandra/images/4.webp",
+      "gallery/Chandra/images/5.webp",
+      "gallery/Chandra/images/6.webp",
+      "gallery/Chandra/images/Chandra.webp"
+    ],
+    "createTime": "2026-05-31T00:00:00.000000+00:00"
+  },
+  {
+    "id": "Gaia",
+    "title": "Gaia",
+    "tags": [
+      "Character"
+    ],
+    "author": "Carlos",
+    "cover": "gallery/Gaia/cover.webp",
+    "images": [
+      "gallery/Gaia/images/0.webp",
+      "gallery/Gaia/images/1.webp",
+      "gallery/Gaia/images/2.webp",
+      "gallery/Gaia/images/Gaia 1 final.webp",
+      "gallery/Gaia/images/Gaia 10 final.webp",
+      "gallery/Gaia/images/Gaia 11 final.webp",
+      "gallery/Gaia/images/Gaia 12 final.webp",
+      "gallery/Gaia/images/Gaia 2 final.webp",
+      "gallery/Gaia/images/Gaia 5 final.webp",
+      "gallery/Gaia/images/Gaia 6  final.webp",
+      "gallery/Gaia/images/Gaia 7 final.webp",
+      "gallery/Gaia/images/Gaia 8 final.webp",
+      "gallery/Gaia/images/Gaia 9 final.webp",
+      "gallery/Gaia/images/Gaia.webp"
+    ],
+    "createTime": "2026-05-31T00:00:00.000000+00:00"
+  },
+  {
+    "id": "North Warrior",
+    "title": "North Warrior",
+    "tags": [
+      "Character",
+      "Fantasy"
+    ],
+    "author": "Carlos",
+    "cover": "gallery/North Warrior/cover.webp",
+    "images": [
+      "gallery/North Warrior/images/001Pos.webp",
+      "gallery/North Warrior/images/002Pos.webp",
+      "gallery/North Warrior/images/003Pos.webp",
+      "gallery/North Warrior/images/004Pos.webp",
+      "gallery/North Warrior/images/005Pos.webp",
+      "gallery/North Warrior/images/006Pos.webp",
+      "gallery/North Warrior/images/North Warrior.webp"
+    ],
+    "createTime": "2026-05-31T00:00:00.000000+00:00"
+  },
+  {
+    "id": "Slan",
+    "title": "Slan",
+    "tags": [
+      "Character",
+      "Fantasy"
+    ],
+    "author": "Carlos",
+    "cover": "gallery/Slan/cover.webp",
+    "images": [
+      "gallery/Slan/images/CAM_1.webp",
+      "gallery/Slan/images/CAM_2.webp",
+      "gallery/Slan/images/CAM_3.webp",
+      "gallery/Slan/images/CAM_4.webp",
+      "gallery/Slan/images/CAM_5tarj.webp",
+      "gallery/Slan/images/CAM_6.webp",
+      "gallery/Slan/images/CAM_7.webp",
+      "gallery/Slan/images/Imagem.webp"
+    ],
+    "createTime": "2026-05-31T00:00:00.000000+00:00"
+  },
+  {
+    "id": "Spike",
+    "title": "Spike",
+    "tags": [
+      "Character",
+      "Anime"
+    ],
+    "author": "Carlos",
+    "cover": "gallery/Spike/cover.webp",
+    "images": [
+      "gallery/Spike/images/image.webp",
+      "gallery/Spike/images/spike 1.webp",
+      "gallery/Spike/images/spike 12.webp",
+      "gallery/Spike/images/spike 15.webp",
+      "gallery/Spike/images/spike 16.webp",
+      "gallery/Spike/images/spike 4.webp",
+      "gallery/Spike/images/spike 5.webp",
+      "gallery/Spike/images/spike 8.webp"
+    ],
+    "createTime": "2026-05-31T00:00:00.000000+00:00"
+  },
+  {
+    "id": "Starfleet Officer",
+    "title": "Starfleet Officer",
+    "tags": [
+      "Character",
+      "Sci-Fi"
+    ],
+    "author": "Carlos",
+    "cover": "gallery/Starfleet Officer/cover.webp",
+    "images": [
+      "gallery/Starfleet Officer/images/0.webp",
+      "gallery/Starfleet Officer/images/1.webp",
+      "gallery/Starfleet Officer/images/Starfleet 2 Final.webp",
+      "gallery/Starfleet Officer/images/Starfleet 3 Final.webp",
+      "gallery/Starfleet Officer/images/Starfleet 4 Final.webp",
+      "gallery/Starfleet Officer/images/Starfleet 5 Final.webp",
+      "gallery/Starfleet Officer/images/Starfleet 6 Final.webp",
+      "gallery/Starfleet Officer/images/Starfleet 7 Final.webp",
+      "gallery/Starfleet Officer/images/Starfleet 8 Final.webp",
+      "gallery/Starfleet Officer/images/Starfleet Officer 1.webp",
+      "gallery/Starfleet Officer/images/Starfleet Officer 2.webp",
+      "gallery/Starfleet Officer/images/Starfleet Officer 3.webp"
+    ],
+    "createTime": "2026-05-31T00:00:00.000000+00:00"
+  },
+  {
+    "id": "Swimsuit",
+    "title": "Swimsuit",
+    "tags": [
+      "Character"
+    ],
+    "author": "Carlos",
+    "cover": "gallery/Swimsuit/cover.webp",
+    "images": [
+      "gallery/Swimsuit/images/1 (7).webp",
+      "gallery/Swimsuit/images/2.webp",
+      "gallery/Swimsuit/images/3.webp",
+      "gallery/Swimsuit/images/4.webp",
+      "gallery/Swimsuit/images/5.webp",
+      "gallery/Swimsuit/images/6.webp",
+      "gallery/Swimsuit/images/7.webp",
+      "gallery/Swimsuit/images/Swimsuit.webp"
+    ],
+    "createTime": "2026-05-31T00:00:00.000000+00:00"
+  },
+  {
+    "id": "The Swan",
+    "title": "The Swan",
+    "tags": [
+      "Character",
+      "Anime"
+    ],
+    "author": "Carlos",
+    "cover": "gallery/The Swan/cover.webp",
+    "images": [
+      "gallery/The Swan/images/0.webp",
+      "gallery/The Swan/images/1.webp",
+      "gallery/The Swan/images/10.webp",
+      "gallery/The Swan/images/2.webp",
+      "gallery/The Swan/images/3.webp",
+      "gallery/The Swan/images/4.webp",
+      "gallery/The Swan/images/5.webp",
+      "gallery/The Swan/images/6.webp",
+      "gallery/The Swan/images/7.webp",
+      "gallery/The Swan/images/8.webp",
+      "gallery/The Swan/images/9.webp",
+      "gallery/The Swan/images/Jun The Swan 2.webp",
+      "gallery/The Swan/images/Jun The Swan.webp"
+    ],
+    "createTime": "2026-05-31T00:00:00.000000+00:00"
+  },
+  {
+    "id": "Wesker",
+    "title": "Wesker",
+    "tags": [
+      "Character",
+      "Game"
+    ],
+    "author": "Carlos",
+    "cover": "gallery/Wesker/cover.webp",
+    "images": [
+      "gallery/Wesker/images/3 (1).webp",
+      "gallery/Wesker/images/6.webp",
+      "gallery/Wesker/images/8.webp",
+      "gallery/Wesker/images/9.webp",
+      "gallery/Wesker/images/Sem_Titulo-3.webp",
+      "gallery/Wesker/images/Weskei_1.webp",
+      "gallery/Wesker/images/Weskei_2.webp",
+      "gallery/Wesker/images/eww.webp"
+    ],
+    "createTime": "2026-05-31T00:00:00.000000+00:00"
+  },
+  {
     "id": "Y'shtola Rhul",
     "title": "Y'shtola Rhul",
     "tags": [
@@ -761,6 +960,7 @@
     "author": "Carlos",
     "cover": "gallery/Emma/cover.webp",
     "images": [
+      "gallery/Emma/images/Character.webp",
       "gallery/Emma/images/Close Lado.webp",
       "gallery/Emma/images/Close tras.webp",
       "gallery/Emma/images/Close.webp",
@@ -768,6 +968,12 @@
       "gallery/Emma/images/Emma.webp",
       "gallery/Emma/images/Lado.webp",
       "gallery/Emma/images/Lado2.webp",
+      "gallery/Emma/images/R1.webp",
+      "gallery/Emma/images/R2.webp",
+      "gallery/Emma/images/R3.webp",
+      "gallery/Emma/images/R4.webp",
+      "gallery/Emma/images/R5.webp",
+      "gallery/Emma/images/R6_.webp",
       "gallery/Emma/images/Tras.webp",
       "gallery/Emma/images/frente.webp"
     ],
