@@ -1,5 +1,51 @@
 [
   {
+    "id": "JUNE_BUSTS",
+    "title": "June Busts",
+    "tags": [
+      "Bust"
+    ],
+    "author": "Carlos",
+    "cover": "gallery/JUNE_BUSTS/cover.webp",
+    "images": [
+      "gallery/JUNE_BUSTS/images/0.0.webp",
+      "gallery/JUNE_BUSTS/images/1.915.webp",
+      "gallery/JUNE_BUSTS/images/10.925.webp",
+      "gallery/JUNE_BUSTS/images/11.926.webp",
+      "gallery/JUNE_BUSTS/images/12.927.webp",
+      "gallery/JUNE_BUSTS/images/13.928.webp",
+      "gallery/JUNE_BUSTS/images/14.929.webp",
+      "gallery/JUNE_BUSTS/images/15.930.webp",
+      "gallery/JUNE_BUSTS/images/16.931.webp",
+      "gallery/JUNE_BUSTS/images/17.932.webp",
+      "gallery/JUNE_BUSTS/images/18.933.webp",
+      "gallery/JUNE_BUSTS/images/19.934.webp",
+      "gallery/JUNE_BUSTS/images/2.916.webp",
+      "gallery/JUNE_BUSTS/images/20.935.webp",
+      "gallery/JUNE_BUSTS/images/21.936.webp",
+      "gallery/JUNE_BUSTS/images/22.937.webp",
+      "gallery/JUNE_BUSTS/images/23.938.webp",
+      "gallery/JUNE_BUSTS/images/24.939.webp",
+      "gallery/JUNE_BUSTS/images/25.940.webp",
+      "gallery/JUNE_BUSTS/images/26.941.webp",
+      "gallery/JUNE_BUSTS/images/27.942.webp",
+      "gallery/JUNE_BUSTS/images/28.943.webp",
+      "gallery/JUNE_BUSTS/images/29.944.webp",
+      "gallery/JUNE_BUSTS/images/3.917.webp",
+      "gallery/JUNE_BUSTS/images/30.945.webp",
+      "gallery/JUNE_BUSTS/images/31.946.webp",
+      "gallery/JUNE_BUSTS/images/32.947.webp",
+      "gallery/JUNE_BUSTS/images/33.948.webp",
+      "gallery/JUNE_BUSTS/images/34.949.webp",
+      "gallery/JUNE_BUSTS/images/4.918.webp",
+      "gallery/JUNE_BUSTS/images/5.919.webp",
+      "gallery/JUNE_BUSTS/images/6.920.webp",
+      "gallery/JUNE_BUSTS/images/7.921.webp",
+      "gallery/JUNE_BUSTS/images/9.924.webp"
+    ],
+    "createTime": "2026-06-07T00:00:00.000000+00:00"
+  },
+  {
     "id": "Chandra",
     "title": "Chandra",
     "tags": [
